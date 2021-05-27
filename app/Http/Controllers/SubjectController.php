@@ -50,11 +50,11 @@ class SubjectController extends Controller
     //Student subject details
     public function sdetails($id){
         $user_id=Auth::user()->id;
-        $subjects=subject::with('users','tasks')->where('id','=',$id)->first();
-        $solutions=solution::where('user_id','=',$user_id)->get();
-        $count= taken_subject::where('subject_id','=',$id)->count();
+        $subjects=subject::with('users','tasks')->where('id',$id)->first();
+        $solutions=solution::where('user_id',$user_id)->get();
+        $count= taken_subject::where('subject_id',$id)->count();
         //reste a faire
-        $students= taken_subject::with('users')->where('subject_id','=',$id)->get();
+        $students= taken_subject::with('users')->where('subject_id',$id)->get();
 //        dd($subjects);
         return view('student.details',compact('subjects','count','students','solutions'));
     }
