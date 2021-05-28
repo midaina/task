@@ -52,14 +52,14 @@
             <ul>
                 <li class="active"><a href="{{ route('welcome') }}">Home</a></li>
                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                @if (Route::has('login'))
+                @if (Route::has('userlogin'))
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
                     @else
 
-                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('userlogin') }}">Login</a></li>
                 @if (Route::has('register'))
-                <li><a href="{{ route('register') }}">Register</a></li>
+                <li><a href="{{ route('userlogin') }}">Register</a></li>
                 @endif
                 @endauth
                 @endif

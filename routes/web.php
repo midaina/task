@@ -25,6 +25,7 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::view('/login','userAuth.login')->name('userlogin');
 
 
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
